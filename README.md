@@ -92,10 +92,11 @@ volumes:
 ```
 ## Далее в консоли в текущей директории `docker-compose up -d`
 
-Для frontend: http://localhost:5173 <br>
-Для backend (swagger-ui): http://localhost:5050/swagger/index.html <br>
-Для ML (swagger-ui): http://localhost:8000/docs <br>
-
+<h2>
+  Для frontend: http://localhost:5173 <br>
+  Для backend (swagger-ui): http://localhost:5050/swagger/index.html <br>
+  Для ML (swagger-ui): http://localhost:8000/docs <br>
+</h2>
 ---
 
 # Frontned
