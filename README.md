@@ -5,7 +5,7 @@
 
 ---
 
-#Технологии:
+# Технологии:
   - Backend ( C# - Asp.Net, Python Fast API )
   - Frontend ( JS + React+vite )
   - ML ( Python + CatBoostClassifier )
