@@ -14,7 +14,7 @@ export default function DiagramsPage() {
     const navigate = useNavigate(); // Хук для навигации
 
     useEffect(() => {
-        fetch(`${PATH_Fraud}/GetAll?pageNumber=1&pageSize=50`, {
+        fetch(`${PATH_Fraud}/GetAll?pageNumber=1&pageSize=400`, {
             credentials: "include",
         })
             .then((res) => res.json())
@@ -58,6 +58,35 @@ export default function DiagramsPage() {
         return acc;
     }, { paid: 0, unpaid: 0 });
 
+    const paymentTypeData = data.reduce((acc, item) => {
+        acc[item.paymentType] = (acc[item.paymentType] || 0) + 1;
+        return acc;
+    }, {});
+
+    // 3. Распределение расстояний
+    const distanceIntervals = [
+        { min: 0, max: 500, label: '0-500' },
+        { min: 500, max: 1000, label: '500-1000' },
+        { min: 1000, max: 1500, label: '1000-1500' },
+        { min: 1500, max: 2000, label: '1500-2000' },
+        { min: 2000, max: Infinity, label: '2000+' },
+    ];
+
+    const distanceData = distanceIntervals.map(interval => ({
+        name: interval.label,
+        value: data.filter(item =>
+            item.distance >= interval.min && item.distance < interval.max
+        ).length
+    }));
+
+    // 4. Возраст товаров
+    const nmAgeData = [
+        { name: '0-30 дней', value: data.filter(item => item.nmAge <= 30).length },
+        { name: '31-180 дней', value: data.filter(item => item.nmAge > 30 && item.nmAge <= 180).length },
+        { name: '181-365 дней', value: data.filter(item => item.nmAge > 180 && item.nmAge <= 365).length },
+        { name: '>365 дней', value: data.filter(item => item.nmAge > 365).length },
+    ];
+
     return (
         <div className={styles.page} data-theme="dark">
             {/* Кнопка для возврата */}
@@ -70,7 +99,7 @@ export default function DiagramsPage() {
             {/* График количества заказанных товаров */}
             <div className={styles.chartContainer}>
                 <h3 className={styles.chartTitle}>Количество заказанных товаров</h3>
-                <ResponsiveContainer width="100%" height={300}>
+                <ResponsiveContainer width="100%" height={400}>
                     <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="userId" label={{ value: 'ID пользователя', position: 'insideBottomRight', offset: -10 }} />
@@ -85,7 +114,7 @@ export default function DiagramsPage() {
             {/* График среднего процента заказанных товаров */}
             <div className={styles.chartContainer}>
                 <h3 className={styles.chartTitle}>Средний процент заказанных товаров</h3>
-                <ResponsiveContainer width="100%" height={300}>
+                <ResponsiveContainer width="100%" height={400}>
                     <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="userId" label={{ value: 'ID пользователя', position: 'insideBottomRight', offset: -10 }} />
@@ -175,6 +204,69 @@ export default function DiagramsPage() {
                     </ResponsiveContainer>
                     <p>{`Процент оплаченных: ${(paymentStatusData.paid / data.length * 100).toFixed(2)}%`}</p>
                 </div>
+            </div>
+            {/* Новые графики */}
+            <div className={styles.chartContainer}>
+                <h3 className={styles.chartTitle}>Распределение типов оплаты</h3>
+                <div className={styles.chartWrapper}>
+                    <ResponsiveContainer width="30%" height={300}>
+                        <PieChart>
+                            <Pie
+                                data={[
+                                    { name: "Карта", value: paymentTypeData.CRD || 0 },
+                                    { name: "Наличные", value: paymentTypeData.CSH || 0 },
+                                ]}
+                                cx="50%"
+                                cy="50%"
+                                outerRadius={80}
+                                label
+                            >
+                                <Cell fill="#8884d8" />
+                                <Cell fill="#82ca9d" />
+                            </Pie>
+                            <Tooltip />
+                            <Legend />
+                        </PieChart>
+                    </ResponsiveContainer>
+                </div>
+            </div>
+
+
+
+            <div className={styles.chartContainer}>
+                <h3 className={styles.chartTitle}>Распределение расстояний доставки</h3>
+                <ResponsiveContainer width="100%" height={300}>
+                    <BarChart data={distanceData}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey="value" fill="#a4de6c" />
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
+
+            <div className={styles.chartContainer}>
+                <h3 className={styles.chartTitle}>Возраст товаров (nmAge)</h3>
+                <ResponsiveContainer width="100%" height={300}>
+                    <PieChart>
+                        <Pie
+                            data={nmAgeData}
+                            dataKey="value"
+                            nameKey="name"
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={100}
+                            label
+                        >
+                            {nmAgeData.map((entry, index) => (
+                                <Cell key={index} fill={COLORS[index % COLORS.length]} />
+                            ))}
+                        </Pie>
+                        <Tooltip />
+                        <Legend />
+                    </PieChart>
+                </ResponsiveContainer>
             </div>
         </div>
     );

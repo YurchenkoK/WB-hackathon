@@ -5314,11 +5314,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\HakatonWB\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\FraudDetectionWeb.Api.csproj",
+      "projectUniqueName": "E:\\WB-hackathon\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\FraudDetectionWeb.Api.csproj",
       "projectName": "FraudDetectionWeb.Api",
-      "projectPath": "E:\\HakatonWB\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\FraudDetectionWeb.Api.csproj",
+      "projectPath": "E:\\WB-hackathon\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\FraudDetectionWeb.Api.csproj",
       "packagesPath": "C:\\Users\\artur\\.nuget\\packages\\",
-      "outputPath": "E:\\HakatonWB\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\obj\\",
+      "outputPath": "E:\\WB-hackathon\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [

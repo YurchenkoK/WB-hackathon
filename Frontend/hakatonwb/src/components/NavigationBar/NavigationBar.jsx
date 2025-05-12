@@ -26,7 +26,6 @@ const NavigationBar = ({ refreshData }) => {
         minNumberOfOrderedItems: 0,
         maxNumberOfOrderedItems: 0,
         meanPercentOfOrderedItems: 0,
-        target: 0,
         service: 'string'
     });
 
@@ -96,7 +95,7 @@ const NavigationBar = ({ refreshData }) => {
         <nav className={styles.navBar}>
             <div className={styles.navGroup}>
                 <button onClick={handleAddNew} className={styles.addButton}>
-                    Add New
+                    Добавить
                 </button>
                 <label className={styles.fileUploadButton}>
                     <input
@@ -106,10 +105,10 @@ const NavigationBar = ({ refreshData }) => {
                         accept=".csv"
                         disabled={uploadLoading}
                     />
-                    {uploadLoading ? 'Uploading...' : 'Upload CSV'}
+                    {uploadLoading ? 'Uploading...' : 'Добавить CSV'}
                 </label>
                 <button onClick={handleDeleteAll} className={styles.deleteButton}>
-                    Delete All
+                    Удалить все
                 </button>
                 <Link to="/diagrams" className={styles.buttonLink}>
                     Перейти к диаграммам
@@ -157,8 +156,10 @@ const NavigationBar = ({ refreshData }) => {
                                         value={newItem.paymentType}
                                         onChange={e => setNewItem({...newItem, paymentType: e.target.value})}
                                     >
-                                        <option value="CARD">Card</option>
-                                        <option value="CASH">Cash</option>
+                                        <option value="QRS">QRS</option>
+                                        <option value="CRD">CRD</option>
+                                        <option value="CSH">CSH</option>
+                                        <option value="BAL">BAL</option>
                                     </select>
                                 </div>
 
@@ -298,17 +299,6 @@ const NavigationBar = ({ refreshData }) => {
                                     />
                                 </div>
 
-                                {/* Status */}
-                                <div className={styles.formField}>
-                                    <label>Status:</label>
-                                    <select
-                                        value={newItem.target}
-                                        onChange={e => setNewItem({...newItem, target: parseInt(e.target.value)})}
-                                    >
-                                        <option value={0}>OK</option>
-                                        <option value={1}>Block</option>
-                                    </select>
-                                </div>
 
                                 {/* Service Info */}
                                 <div className={styles.formField}>

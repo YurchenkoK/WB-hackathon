@@ -63,14 +63,14 @@
 .chartContainer {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+
 }
 
 .chartWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 33%;  /* Устанавливаем фиксированную ширину для каждой диаграммы */
+    width: 100%;  /* Устанавливаем фиксированную ширину для каждой диаграммы */
 }
 
 .chartTitle {

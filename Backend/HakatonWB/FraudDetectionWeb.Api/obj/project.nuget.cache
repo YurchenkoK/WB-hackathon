@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VQahmHEdIes=",
+  "dgSpecHash": "R1RoLZ1jbcM=",
   "success": true,
-  "projectFilePath": "E:\\HakatonWB\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\FraudDetectionWeb.Api.csproj",
+  "projectFilePath": "E:\\WB-hackathon\\Backend\\HakatonWB\\FraudDetectionWeb.Api\\FraudDetectionWeb.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artur\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\artur\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
