@@ -1,0 +1,1 @@
+export const PATH_Fraud = "http://localhost:5050/api/FraudDetection"

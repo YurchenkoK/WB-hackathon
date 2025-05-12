@@ -1,0 +1,80 @@
+/* Темная тема */
+:root {
+    --background-color: #1c1c1c;
+    --text-color: #f7f9fc;
+    --chart-bg: #333;
+    --chart-shadow: rgba(255, 255, 255, 0.1);
+    --button-bg: #444;
+    --button-hover-bg: #555;
+}
+
+/* Светлая тема */
+[data-theme="light"] {
+    --background-color: #f7f9fc;
+    --text-color: #1c1c1c;
+    --chart-bg: white;
+    --chart-shadow: rgba(0, 0, 0, 0.1);
+    --button-bg: #8884d8;
+    --button-hover-bg: #7b73c4;
+}
+
+.page {
+    padding: 2rem;
+    background-color: var(--background-color);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.chartContainer {
+    background: var(--chart-bg);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px var(--chart-shadow);
+}
+
+.chartTitle {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Кнопка для возвращения */
+.button-back {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.button-back:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.chartContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chartWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;  /* Устанавливаем фиксированную ширину для каждой диаграммы */
+}
+
+.chartTitle {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}

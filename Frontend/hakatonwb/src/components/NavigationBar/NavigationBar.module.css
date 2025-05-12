@@ -1,0 +1,245 @@
+.navBar {
+    background: rgba(25, 24, 37, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navGroup {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.buttonBase {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.addButton {
+    composes: buttonBase;
+    background: linear-gradient(135deg, #6d5dd3 0%, #7884e5 100%);
+    color: white;
+}
+
+.addButton:hover {
+    background: linear-gradient(135deg, #7884e5 0%, #6d5dd3 100%);
+    box-shadow: 0 2px 12px rgba(109, 93, 211, 0.4);
+}
+
+.fileUploadButton {
+    composes: buttonBase;
+    position: relative;
+    background: rgba(109, 93, 211, 0.15);
+    color: #b5b1ff;
+    border: 1px solid rgba(109, 93, 211, 0.3);
+}
+
+.fileUploadButton:hover {
+    background: rgba(109, 93, 211, 0.25);
+}
+
+/* Стили для кнопки */
+.buttonLink {
+    display: inline-block;
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.buttonLink:hover {
+    background-color: #45a049; /* Темнее при наведении */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+.buttonLink:active {
+    background-color: #388e3c; /* Еще темнее при нажатии */
+}
+
+
+.deleteButton {
+    composes: buttonBase;
+    background: linear-gradient(135deg, #ff4d4d 0%, #ff7979 100%);
+    color: white;
+}
+
+.addFormOverlay {
+    margin-top: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.addForm {
+    background: #1a1825;
+    padding: 2rem;
+    border-radius: 14px;
+    width: 800px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.addForm h2 {
+    color: #e0def4;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formField label {
+    color: #8a85b4;
+    font-size: 0.9rem;
+}
+
+.formField input,
+.formField select {
+    background: rgba(40, 38, 58, 0.8);
+    border: 1px solid rgba(109, 93, 211, 0.3);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: #e0def4;
+    transition: all 0.2s ease;
+}
+
+.formField input:focus,
+.formField select:focus {
+    outline: none;
+    border-color: #6d5dd3;
+    box-shadow: 0 0 0 3px rgba(109, 93, 211, 0.2);
+}
+
+.formField input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6d5dd3;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cancelButton {
+    composes: buttonBase;
+    background: none;
+    color: #8a85b4;
+    border: 1px solid rgba(138, 133, 180, 0.3);
+}
+
+.cancelButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.saveButton {
+    composes: buttonBase;
+    background: linear-gradient(135deg, #6d5dd3 0%, #7884e5 100%);
+    color: white;
+    padding: 8px 24px;
+}
+
+.saveButton:hover {
+    background: linear-gradient(135deg, #7884e5 0%, #6d5dd3 100%);
+}
+
+.loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+}
+
+.spinner {
+    border: 6px solid #ccc;
+    border-top: 6px solid #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.fullscreenOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный черный */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+    backdrop-filter: blur(4px); /* эффект размытия */
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

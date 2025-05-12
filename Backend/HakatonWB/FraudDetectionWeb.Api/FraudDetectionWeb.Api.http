@@ -1,0 +1,6 @@
+@FraudDetectionWeb.Api_HostAddress = http://localhost:5117
+
+GET {{FraudDetectionWeb.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "5gvk54KkBvxa997m7HTgJ+8iR6OASPDHRZyagmZqe7w=",
+  "Source": "FraudDetectionWeb.Api",
+  "BasePath": "_content/FraudDetectionWeb.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
