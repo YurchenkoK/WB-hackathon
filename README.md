@@ -6,12 +6,12 @@
 ---
 
 # Технологии:
-  - <h3>Backend ( C# - Asp.Net, Python Fast API )</h3>
-  - <h3>Frontend ( JS + React+vite )</h3>
-  - <h3>ML ( Python + CatBoostClassifier )</h3>
+  - <h3>Backend ( C# - Asp.Net, Python - Fast API )</h3>
+  - <h3>Frontend ( JS - React + vite )</h3>
+  - <h3>ML ( Python - CatBoostClassifier )</h3>
 
 ---
-# Запуск проекта с помощбю docker-compose.yml 
+# Запуск проекта с помощью docker-compose.yml 
 ```
 services:
   postgres:
@@ -90,4 +90,26 @@ volumes:
   postgres_data:
 
 ```
-Далее в консоли в текущей директории `docker-compose up -d`
+## Далее в консоли в текущей директории `docker-compose up -d`
+
+Для frontend: http://localhost:5173
+Для backend (swagger-ui): http://localhost:5050/swagger/index.html
+Для ML (swagger-ui): http://localhost:8000/docs
+
+---
+
+# Frontned
+
+![image](https://github.com/user-attachments/assets/34bf422c-2e98-47c1-83b1-b43758e46b3c)
+
+---
+
+# Backend 
+
+![image](https://github.com/user-attachments/assets/b3d6cfde-dee5-4c5f-aea3-2a99bec61682)
+
+---
+
+# ML
+
+![image](https://github.com/user-attachments/assets/d974e512-5725-4456-8dfb-fd113735709e)
