@@ -1,14 +1,14 @@
 # Выполнили:
-  - Юрченко Кирилл (ML, Front)
-  - Марянян Артур (Back, Front)
-  - Варданян Давид (Back, ML)
+  - <h3>Юрченко Кирилл (ML, Front)</h3>
+  - <h3>Марянян Артур (Back, Front)</h3>
+  - <h3>Варданян Давид (Back, ML)</h3>
 
 ---
 
 # Технологии:
-  - Backend ( C# - Asp.Net, Python Fast API )
-  - Frontend ( JS + React+vite )
-  - ML ( Python + CatBoostClassifier )
+  - <h3>Backend ( C# - Asp.Net, Python Fast API )</h3>
+  - <h3>Frontend ( JS + React+vite )</h3>
+  - <h3>ML ( Python + CatBoostClassifier )</h3>
 
 ---
 # Запуск проекта с помощбю docker-compose.yml 
